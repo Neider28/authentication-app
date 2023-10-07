@@ -1,0 +1,158 @@
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.back_container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 20px;
+}
+
+.back_container span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--blue);
+  font-size: 1rem;
+}
+
+.back_container .icon {
+  font-size: 24px;
+}
+
+.edit_container {
+  width: 100%;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
+.edit_container .edit_head {
+  width: 100%;
+}
+
+.edit_head h3 {
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.edit_head p {
+  margin-top: 5px;
+  color: var(--gray);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.form_edit {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.edit_item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.edit_item_photo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.edit_photo {
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+
+.edit_item_photo label {
+  margin-left: 10px;
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.edit_photo input {
+  position: absolute;
+  left: 0;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	outline: none;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.edit_item label {
+  margin-bottom: 10px;
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.edit_item input {
+  width: 100%;
+  height: 45px;
+  padding: 0 15px;
+  outline: none;
+  border: 1px solid var(--gray);
+  border-radius: 10px;
+  background-color: transparent;
+  color: var(--white);
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 500;
+}
+
+.form_edit button {
+  width: 100px;
+  height: 40px;
+  margin-top: 10px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background-color: var(--blue);
+  color: var(--white);
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+@media (min-width: 700px) {
+  .back_container {
+    width: 80%;
+    padding: 0;
+  }
+
+  .edit_container {
+    width: 80%;
+    padding: 30px 50px;
+    border: 1px solid var(--gray);
+    border-radius: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .back_container {
+    width: 900px;
+  }
+
+  .edit_container {
+    width: 900px;
+  }
+
+  .edit_item input {
+    width: 500px;
+  }
+}
