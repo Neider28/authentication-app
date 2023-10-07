@@ -39,11 +39,9 @@ export default function Login() {
 
     try {
       const response = await fetch(`${process.env.API_AUTH}/auth/signIn`, {
-        mode: 'no-cors',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
         },
         body: JSON.stringify({ email, password }),
       });
