@@ -4,7 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'auth-backend-smoky.vercel.app',
+        hostname: 'res.cloudinary.com',
         port: '',
       },
     ],
