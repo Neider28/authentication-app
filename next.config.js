@@ -10,7 +10,7 @@ const nextConfig = {
     ],
   },
   env: {
-    API_AUTH: 'https://auth-backend-liart.vercel.app',
+    API_AUTH: 'https://auth-backend-smoky.vercel.app',
   }
 }
 
