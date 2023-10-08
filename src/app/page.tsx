@@ -2,12 +2,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import Profile from '../../public/assets/devchallenges.png';
 import Header from '@/components/header';
 import Loading from '@/components/loading';
 import IsNotAuth from '@/middlewares/isNotAuth.middleware';
 import { UserI } from '@/interfaces/user.interface';
 import styles from './page.module.css';
+import { getTokenCookie } from '@/utils/cookie.util';
 
 export default function Home() {
   const [user, setUser] = useState<UserI | null>(null);
@@ -17,14 +17,16 @@ export default function Home() {
 
     const getProfileData = async () => {
       try {
+        const token = getTokenCookie();
+
         const response = await fetch(`${process.env.API_AUTH}/auth/profile`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            'Authorization': `Bearer ${token}`,
           },
         });
-
+        
         const data = await response.json();
 
         setUser(data);

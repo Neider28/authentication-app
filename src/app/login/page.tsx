@@ -10,6 +10,7 @@ import IsAuth from '@/middlewares/isAuth.middleware';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import styles from '../../css/login.module.css';
+import { setTokenCookie } from '@/utils/cookie.util';
 
 export default function Login() {
   const router = useRouter();
@@ -51,7 +52,9 @@ export default function Login() {
 
         const token = data.access_token;
 
-        localStorage.setItem('token', token);
+        setTokenCookie(token, 360);
+
+        // localStorage.setItem('token', token);
 
         router.push('/');
       } else {

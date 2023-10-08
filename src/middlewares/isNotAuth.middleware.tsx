@@ -1,6 +1,7 @@
 import { ReactNode, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Loading from '@/components/loading';
+import { getTokenCookie } from '@/utils/cookie.util';
 
 interface Props {
   children: ReactNode;
@@ -13,7 +14,7 @@ const IsNotAuth: React.FC<Props> = ({ children }) => {
   useEffect(() => {
     const checkAuthentication = async () => {
       try {
-        const token = localStorage.getItem('token');
+        const token = getTokenCookie();
 
         if (token) {
           setIsAuthenticated(true);

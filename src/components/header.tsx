@@ -6,6 +6,7 @@ import { Icon } from '@iconify/react';
 import Logo from '../../public/assets/devchallenges-light.svg';
 import Profile from '../../public/assets/devchallenges.png';
 import styles from '../css/header.module.css';
+import { removeTokenCookie } from '@/utils/cookie.util';
 
 interface Props {
   name: string;
@@ -17,7 +18,7 @@ const Header: React.FC<Props> = ({ name, profileImage }) => {
   const router = useRouter();
 
   const logout = () => {
-    localStorage.clear();
+    removeTokenCookie();
     router.push('/login');
   };
 

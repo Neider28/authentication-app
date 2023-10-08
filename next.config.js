@@ -15,7 +15,8 @@ const nextConfig = {
     ],
   },
   env: {
-    API_AUTH: 'https://auth-backend-smoky.vercel.app',
+    // API_AUTH: 'https://auth-backend-smoky.vercel.app',
+    API_AUTH: 'http://localhost:4000',
   }
 }
 

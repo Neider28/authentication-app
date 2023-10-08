@@ -10,6 +10,7 @@ import IsNotAuth from '@/middlewares/isNotAuth.middleware';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import styles from '../../css/edit.module.css';
+import { getTokenCookie } from '@/utils/cookie.util';
 
 export default function Edit() {
   const [user, setUser] = useState<UserI | null>(null);
@@ -42,11 +43,13 @@ export default function Edit() {
 
     const getProfileData = async () => {
       try {
+        const token = getTokenCookie();
+
         const response = await fetch(`${process.env.API_AUTH}/auth/profile`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            'Authorization': `Bearer ${token}`,
           },
         });
 
@@ -78,6 +81,7 @@ export default function Edit() {
     setProfileImage(URL.createObjectURL(selectedImage));
 
     try {
+      const token = getTokenCookie();
       const formImage = new FormData();
 
       formImage.append('profileImage', selectedImage);
@@ -85,7 +89,7 @@ export default function Edit() {
       const response = await fetch(`${process.env.API_AUTH}/auth/profile/edit/image`, {
         method: 'PUT',
         headers: {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`,
+          'Authorization': `Bearer ${token}`,
         },
         body: formImage,
       });
@@ -104,11 +108,13 @@ export default function Edit() {
     e.preventDefault();
 
     try {
+      const token = getTokenCookie();
+
       const response = await fetch(`${process.env.API_AUTH}/auth/profile/edit`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('token')}`,
+          'Authorization': `Bearer ${token}`,
         },
         body: JSON.stringify(formData),
       });

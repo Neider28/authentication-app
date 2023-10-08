@@ -13,6 +13,8 @@
     "@nextui-org/system": "^2.0.10",
     "@nextui-org/theme": "^2.1.9",
     "bcrypt": "^5.1.1",
+    "cookie": "^0.5.0",
+    "js-cookie": "^3.0.5",
     "next": "^13.5.4",
     "react": "latest",
     "react-dom": "latest",
@@ -21,6 +23,7 @@
   "devDependencies": {
     "@iconify/react": "^4.1.1",
     "@types/bcrypt": "^5.0.0",
+    "@types/js-cookie": "^3.0.4",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
